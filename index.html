@@ -8,9 +8,47 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <!-- Modal de Instruções -->
+<div id="modal-instrucoes" class="hidden">
+    <div class="modal-content">
+      <span id="close-instrucoes-btn">&times;</span>
+      <h2>🧠 Como usar o sistema?</h2>
+      <ul style="line-height: 1.6;">
+        <li>🔍 Clique em uma ideia para ver os detalhes.</li>
+        <li>📝 Clique em <strong>"Avaliar ideia"</strong> para dar sua opinião.</li>
+        <li>✅ Ideias avaliadas ficarão marcadas em verde com um selo de pontuação.</li>
+        <li>📊 A pontuação vai de 0 a 10 e é baseada nas respostas dadas. Veja abaixo os critérios:</li>
+      </ul>
+  
+      <h3 style="margin-top: 15px;">📈 Critérios de Pontuação</h3>
+      <ul style="line-height: 1.5; font-size: 15px;">
+        <li><strong>1. Resolve um problema real?</strong><br>
+          Não resolve (0), Resolve parcialmente (1), Resolve claramente (2)</li>
+        <li><strong>2. Você compraria?</strong><br>
+          Não (0), Talvez, com ajustes (1), Sim (2)</li>
+        <li><strong>3. Outros donos veriam valor?</strong><br>
+          Pouco provável (0), Provável (1), Muito provável (2)</li>
+        <li><strong>4. Facilidade de implantação?</strong><br>
+          Difícil (0), Médio (1), Fácil (2)</li>
+        <li><strong>5. Potencial de venda/escala?</strong><br>
+          Baixo (0), Médio (1), Alto (2)</li>
+      </ul>
+  
+      <p style="margin-top: 15px; font-size: 0.9em; color: #aaa;">Este aviso aparecerá apenas uma vez.</p>
+    </div>
+  </div>
+  
   <header>
     Ideias de Negócio. TECH + Supermercados
   </header>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="copiar-avaliacoes">📋 Copiar Avaliações</button>
+    <button id="mostrar-instrucoes">📘 Instruções</button>
+  </div>
+  
+
 
   <main id="grid-container">
     <!-- Cards serão inseridos dinamicamente aqui -->
