@@ -1,0 +1,79 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideias de Negócio. TECH + Supermercado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    Ideias de Negócio. TECH + Supermercados
+  </header>
+
+  <main id="grid-container">
+    <!-- Cards serão inseridos dinamicamente aqui -->
+  </main>
+
+  <!-- Modal para plano de negócio -->
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <span id="close-btn">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p><strong>Problema:</strong> <span id="modal-problema"></span></p>
+      <p><strong>Solução:</strong> <span id="modal-solucao"></span></p>
+      <p><strong>Custo Estimado:</strong> <span id="modal-custo"></span></p>
+      <p><strong>Plano de Negócio:</strong></p>
+      <p id="modal-plano"></p>
+
+      <button id="avaliar-btn">Avaliar ideia</button>
+<div id="form-avaliacao" class="hidden">
+  <form id="avaliacao-form">
+    <label>1. Essa solução resolve um problema real?</label>
+    <select name="problema_real" required>
+      <option>Não resolve</option>
+      <option>Resolve parcialmente</option>
+      <option>Resolve claramente</option>
+    </select>
+
+    <label>2. Você compraria essa solução?</label>
+    <select name="compraria" required>
+      <option>Não</option>
+      <option>Talvez, com ajustes</option>
+      <option>Sim</option>
+    </select>
+
+    <label>3. Outros donos veriam valor?</label>
+    <select name="valor_outros" required>
+      <option>Pouco provável</option>
+      <option>Provável</option>
+      <option>Muito provável</option>
+    </select>
+
+    <label>4. Facilidade de implantação?</label>
+    <select name="facilidade_implantacao" required>
+      <option>Difícil</option>
+      <option>Médio</option>
+      <option>Fácil</option>
+    </select>
+
+    <label>5. Potencial de venda ou escala?</label>
+    <select name="potencial_escala" required>
+      <option>Baixo</option>
+      <option>Médio</option>
+      <option>Alto</option>
+    </select>
+
+    <button type="submit">Salvar Avaliação</button>
+  </form>
+</div>
+    </div>
+  </div>
+
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
