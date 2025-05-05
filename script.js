@@ -178,3 +178,55 @@ window.onclick = function (event) {
     modal.classList.add("hidden");
   }
 };
+
+document.getElementById("copiar-avaliacoes").onclick = () => {
+
+    const avaliadas = JSON.parse(localStorage.getItem("ideiasAvaliadas")) || [];
+  
+    if (!avaliadas.length) {
+      alert("Nenhuma ideia avaliada ainda.");
+      return;
+    }
+  
+    const texto = avaliadas
+      .filter(i => i.nomeIdeia && typeof i.pontuacao === "number")
+      .map(i => {
+        const ideiaOriginal = ideias.find(orig => orig.nome === i.nomeIdeia);
+        const resumo = ideiaOriginal?.resumo || "Sem resumo disponível.";
+        return `📌 ${i.nomeIdeia} — Nota: ${i.pontuacao}\n📝 ${resumo.trim()}`;
+      })
+      .join("\n\n");
+  
+    navigator.clipboard.writeText(texto)
+      .then(() => alert("✅ Avaliações copiadas! Agora cole no WhatsApp."))
+      .catch(() => alert("Erro ao copiar."));
+  };
+  
+  // Mostrar instruções novamente ao clicar no botão
+document.getElementById("mostrar-instrucoes").onclick = () => {
+    document.getElementById("modal-instrucoes").classList.remove("hidden");
+  };
+  
+  // Fechar modal de instruções
+  document.getElementById("close-instrucoes-btn").onclick = () => {
+    document.getElementById("modal-instrucoes").classList.add("hidden");
+  };
+  
+  
+// Modal de instruções ao abrir
+window.addEventListener("load", () => {
+    const jaViuInstrucoes = localStorage.getItem("instrucoesVistas");
+  
+    if (!jaViuInstrucoes) {
+      const modal = document.getElementById("modal-instrucoes");
+      modal.classList.remove("hidden");
+  
+      const fechar = document.getElementById("close-instrucoes-btn");
+      fechar.onclick = () => {
+        modal.classList.add("hidden");
+        localStorage.setItem("instrucoesVistas", "true");
+      };
+    }
+  });
+  
+  
